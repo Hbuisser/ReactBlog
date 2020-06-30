@@ -11,9 +11,13 @@ import '../assets/stylesheets/application.scss';
 import postsReducer from './reducers/posts_reducer';
 import PostsIndex from './containers/posts_index';
 import PostsShow from './containers/posts_show';
+import PostsNew from './containers/posts_new';
+
+import { reducer as formReducer } from 'redux-form';
 
 const reducers = combineReducers({
-  posts: postsReducer
+  posts: postsReducer,
+  form: formReducer
 });
 
 const middlewares = applyMiddleware(reduxPromise, logger);
@@ -25,6 +29,7 @@ ReactDOM.render(
       <div className="thin-container">
         <Switch>
           <Route path="/" exact component={PostsIndex} />
+          <Route path="/posts/new" exact component={PostsNew} />
           <Route path="/posts/:id" component={PostsShow} />
         </Switch>
       </div>

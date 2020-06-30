@@ -37,7 +37,7 @@ function mapStateToProps(state, ownProps) {
 }
 
 function mapDispatchToProps(dispatch) {
- return bindActionCreators({ fetchPost }, dispatch);
+  return bindActionCreators({ fetchPost }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostsShow);
